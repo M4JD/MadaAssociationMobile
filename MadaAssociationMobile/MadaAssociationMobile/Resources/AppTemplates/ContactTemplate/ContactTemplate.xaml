@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MadaAssociationMobile.Resources"
+             x:Class="MadaAssociationMobile.Resources.ContactTemplate">
+    <DataTemplate x:Key="AcceptedContactTemplate">
+        <Grid ColumnDefinitions="40,*,Auto" RowDefinitions="40,6" Padding="0,10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ContactClickedCommand}" CommandParameter="{Binding .}"/>
+            </Grid.GestureRecognizers>
+            <Frame HasShadow="False" BorderColor="{StaticResource LightGrey}" CornerRadius="20" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ContactClickedCommand}" CommandParameter="{Binding .}"/>
+                </Frame.GestureRecognizers>
+                <Image Aspect="AspectFit" 
+                       Source="no_image"/>
+            </Frame>
+            <Label Grid.Column="1" VerticalOptions="CenterAndExpand" 
+                   Style="{StaticResource ContactsTitle}"
+                   Text="{Binding .,Converter={StaticResource FullNameConverter}}"/>
+            <Image Grid.Column="2" Source="arrow"></Image>
+            <BoxView Color="{StaticResource LightGrey}" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,5,0,0"></BoxView>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="PendingContactTemplate">
+        <Grid ColumnDefinitions="*" RowDefinitions="Auto,Auto,6" Padding="0,10">
+            <Label Grid.Column="0" VerticalOptions="CenterAndExpand" 
+                   Style="{StaticResource CardTitle}"
+                   Text="{Binding Message}"/>
+            <Grid Grid.Row="1" RowDefinitions="40">
+                <ImageButton Grid.Column="0"
+                        Source="approve_icon"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ApproveCommand}" CommandParameter="{Binding .}"
+                        Style="{StaticResource SuccessOutlineImageButton}"/>
+                <ImageButton Grid.Column="1" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RejectCommand}" 
+                        CommandParameter="{Binding .}"
+                        Source="reject_icon"
+                        Style="{StaticResource DangerOutlineImageButton}"/>
+            </Grid>
+            <BoxView Color="{StaticResource LightGrey}" Grid.Row="2" Margin="0,5,0,0"></BoxView>
+        </Grid>
+    </DataTemplate>
+    <local:ContactTemplateSelector 
+        x:Key="ContactTemplateSelector"
+        PendingContactTemplate="{StaticResource PendingContactTemplate}"
+        AcceptedContactTemplate="{StaticResource AcceptedContactTemplate}"/>
+</ResourceDictionary>

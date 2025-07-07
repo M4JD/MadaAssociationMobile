@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="ContactListCellControl"
+             x:Class="MadaAssociationMobile.Controls.ContactListCell">
+  <ContentView.Content>
+        <Grid ColumnDefinitions="40,*,Auto" RowDefinitions="40,6" Padding="0,10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference ContactListCellControl},Path=Command}" CommandParameter="{Binding Source={x:Reference ContactListCellControl},Path=CommandParameter}"/>
+            </Grid.GestureRecognizers>
+            <Frame HasShadow="False" BorderColor="{StaticResource LightGrey}" CornerRadius="20" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference ContactListCellControl},Path=Command}" CommandParameter="{Binding Source={x:Reference ContactListCellControl},Path=CommandParameter}"/>
+                </Frame.GestureRecognizers>
+                <Image Aspect="AspectFit" 
+                       Source="{Binding Source={x:Reference ContactListCellControl},Path=ContactAvatar}"/>
+            </Frame>
+            <Label Grid.Column="1" VerticalOptions="CenterAndExpand" 
+                   Style="{StaticResource ContactsTitle}"
+                   Text="{Binding Source={x:Reference ContactListCellControl},Path=ContactName}"/>
+            <Image Grid.Column="2" Source="arrow"></Image>
+            <BoxView Color="{StaticResource LightGrey}" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,5,0,0"></BoxView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

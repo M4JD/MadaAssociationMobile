@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:MadaAssociationMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MadaAssociationMobile.Views.ChatDetailsView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:viewmodelbase="clr-namespace:MadaAssociationMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True" 
+             StatusBar="{Binding StatusBar}"
+             xmlns:controls="clr-namespace:MadaAssociationMobile.CustomRenderers"
+             BackgroundColor="White">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <Grid RowDefinitions="*,Auto">
+            <ScrollView x:Name="scrollView" Grid.Row="0">
+                <StackLayout Spacing="10" ChildAdded="msgstack_ChildAdded" x:Name="msgstack" BindableLayout.ItemsSource="{Binding MessagesList}" BindableLayout.ItemTemplateSelector="{StaticResource MessageTemplateSelector}">
+                </StackLayout>
+            </ScrollView>
+            <Grid
+                Margin="0,0,0,10"
+                ColumnDefinitions="*,40" 
+                RowDefinitions="40"
+                Grid.Row="1" 
+                Padding="0">
+                <Frame 
+                    Padding="0.5"
+                    x:Name="EntryOuterFrame"
+                    Style="{StaticResource FrameEntry}">
+                    <Frame 
+                        Padding="10,1"
+                        x:Name="EntryInnerFrame"
+                        Style="{StaticResource FrameEntry}">
+                        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="5">
+                            <controls:CustomEntry
+                                Margin="0"
+                                x:Name="CustomEntryControl"
+                                Focused="CustomEntry_Focused"
+                                Unfocused="CustomEntry_Unfocused"
+                                HandleColor="White"
+                                TintColor="White"
+                                Text="{Binding Message.Text}"
+                                Placeholder="{Binding Message.Placeholder}" 
+                                IsPassword="{Binding Message.IsPassword}"
+                                Style="{StaticResource PrimaryEntry}"/>
+                            <ImageButton BackgroundColor="Transparent" Grid.Column="1" Source="attachment_icon"/>
+                            <ImageButton BackgroundColor="Transparent" Grid.Column="2" Source="camera_icon"/>
+                        </Grid>
+                    </Frame>
+                </Frame>
+                <Frame Grid.Column="1" Padding="10" HasShadow="False" CornerRadius="20" BackgroundColor="{StaticResource Primary}">
+                    <ImageButton Command="{Binding SendMessageCommand}" BackgroundColor="Transparent" Source="microphone_icon"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendMessageCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentView>
+</base:BaseView>

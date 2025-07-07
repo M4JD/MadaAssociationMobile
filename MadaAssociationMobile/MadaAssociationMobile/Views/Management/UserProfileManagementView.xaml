@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:MadaAssociationMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodelbase="clr-namespace:MadaAssociationMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True"
+               NavigationPage.HasNavigationBar="False"
+             x:Class="MadaAssociationMobile.Views.UserProfileManagementView">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <StackLayout>
+            <Grid RowDefinitions="48" ColumnDefinitions="48,*" Padding="0,24,0,24">
+                <Frame CornerRadius="24" 
+                       HasShadow="False" 
+                       Padding="0" 
+                       BackgroundColor="Transparent"
+                       BorderColor="{StaticResource LightGrey}"/>
+                <Grid Margin="10,0,0,0" Grid.Column="1">
+                    <Label 
+                        Text="{Binding User,Converter={StaticResource FullNameConverter}}" 
+                        Style="{StaticResource SettingsTitle}"/>
+                    <Label 
+                        Grid.Row="1" 
+                        Text="Change Profile Picture" Style="{StaticResource PrimaryLink}" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeProfileCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Grid>
+            <Grid 
+                ColumnDefinitions="20,*,10"
+                Padding="0,20">
+                <Image Source="profile" Grid.Row="0" Grid.Column="0" Aspect="AspectFit" />
+                <Label Margin="10,0,0,0" Text="View profile" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="2" Aspect="AspectFit" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewProfileCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="20,*,10"
+                Padding="0,20">
+                <Image Source="friends_icon" Grid.Row="0" Grid.Column="0" Aspect="AspectFit" />
+                <Label Margin="10,0,0,0" Text="Friends" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="2" Aspect="AspectFit" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewFriendsCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="20,*,10"
+                Padding="0,20">
+                <Image Source="caregiver_icon" Grid.Row="0" Grid.Column="0" Aspect="AspectFit" />
+                <Label Margin="10,0,0,0" Text="Caregivers" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="2" Aspect="AspectFit" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewCaregiversCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="20,*,10"
+                Padding="0,20">
+                <Image Source="user_pref" Grid.Row="0" Grid.Column="0" Aspect="AspectFit" />
+                <Label Margin="10,0,0,0" Text="User’s Preferences" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="2" Aspect="AspectFit" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewUserPreferencesCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+        </StackLayout>
+    </ContentView>
+</base:BaseView>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MadaAssociationMobile.Resources"
+             x:Class="MadaAssociationMobile.Resources.MessagesTemplate">
+    <DataTemplate x:Key="MessageTemplate">
+        <Frame CornerRadius="8" 
+               Padding="10" 
+               Margin="{Binding .,Converter={StaticResource MessageFrameMarginConverter}}"
+               HasShadow="False" 
+               BackgroundColor="{Binding .,Converter={StaticResource MessageFrameBackgroundColorConverter}}"
+               BorderColor="{Binding .,Converter={StaticResource MessageFrameBorderColorConverter}}" >
+            <Grid RowDefinitions="Auto,Auto">
+                <Label Style="{StaticResource ChatMessageContent}" 
+                       TextColor="{Binding .,Converter={StaticResource MessageTextConverter}}" 
+                       Text="{Binding Content}" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Grid.Row="1">
+                    <Label 
+                       Text="{Binding CreatedAt,Converter={StaticResource MessageDateConverter}}"
+                       TextColor="{Binding .,Converter={StaticResource MessageTextConverter}}"
+                       Style="{StaticResource ChatMessageTime}" 
+                       />
+                    <Image WidthRequest="15" IsVisible="{Binding .,Converter={StaticResource TickConverter}}" Rotation="10" Source="message_tick_icon"/>
+                </StackLayout>
+
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <DataTemplate x:Key="VerificationTemplate">
+        <Frame Padding="5">
+            <Grid RowDefinitions="Auto,Auto">
+                <Label />
+                <Label HorizontalOptions="EndAndExpand" Text="I'm a verification message" Grid.Row="1"/>
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <DataTemplate x:Key="AudioTemplate">
+        <Frame Padding="5">
+            <Grid RowDefinitions="Auto,Auto">
+                <Label />
+                <Label HorizontalOptions="EndAndExpand"  Text="I'm an audio message"  Grid.Row="1"/>
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <DataTemplate x:Key="ImageTemplate">
+        <Frame Padding="5">
+            <Grid RowDefinitions="Auto,Auto">
+                <Label />
+                <Label HorizontalOptions="EndAndExpand"  Text="I'm an image message"  Grid.Row="1"/>
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <DataTemplate x:Key="FileTemplate">
+        <Frame Padding="5">
+            <Grid RowDefinitions="Auto,Auto">
+                <Label />
+                <Label HorizontalOptions="EndAndExpand"  Text="I'm a file message"  Grid.Row="1"/>
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <DataTemplate x:Key="InfoTemplate">
+        <Frame Padding="5">
+            <Grid RowDefinitions="Auto,Auto">
+                <Label />
+                <Label HorizontalOptions="EndAndExpand"  Text="I'm an info message"  Grid.Row="1"/>
+            </Grid>
+        </Frame>
+    </DataTemplate>
+    <local:MessageTemplateSelector x:Key="MessageTemplateSelector"
+                                   MessageTemplate="{StaticResource MessageTemplate}"
+                                   InfoTemplate="{StaticResource InfoTemplate}"
+                                   AudioTemplate="{StaticResource AudioTemplate}"
+                                   ImageTemplate="{StaticResource ImageTemplate}"
+                                   VerificationTemplate="{StaticResource VerificationTemplate}"
+                                   FileTemplate="{StaticResource FileTemplate}"/>
+</ResourceDictionary>

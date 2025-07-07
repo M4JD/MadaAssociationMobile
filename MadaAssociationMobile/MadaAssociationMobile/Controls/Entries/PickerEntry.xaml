@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MadaAssociationMobile.Controls"
+             x:Name="PickerEntryControl"
+             x:Class="MadaAssociationMobile.Controls.PickerEntry">
+    <StackLayout Spacing="0" Padding="0" Margin="0">
+        <Label
+            x:Name="TitleLabel"
+            Style="{StaticResource EntryTitle}"
+            IsVisible="{Binding Source={x:Reference PickerEntryControl},Path=Title, Converter={StaticResource EmptyStringConverter}}"
+            Text="{Binding Source={x:Reference PickerEntryControl},Path=Title}"/>
+        <Frame 
+            Padding="0.5"
+            x:Name="EntryOuterFrame"
+            Style="{StaticResource FrameEntry}">
+            <Frame 
+                x:Name="EntryInnerFrame"
+                Style="{StaticResource FrameEntry}">
+                <controls:CustomPicker
+                    SelectetItem="{Binding Source={x:Reference PickerEntryControl},Path=SelectetItem}"
+                    ListItems="{Binding Source={x:Reference PickerEntryControl},Path=ListItems}"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="0"
+                    x:Name="CustomEntryControl"/>
+            </Frame>
+        </Frame>
+        <Label 
+            Style="{StaticResource EntryError}"
+            IsVisible="{Binding Source={x:Reference PickerEntryControl},Path=IsError}"
+            Text="{Binding Source={x:Reference PickerEntryControl},Path=ErrorText}"/>
+    </StackLayout>
+</ContentView>

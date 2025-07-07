@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:MadaAssociationMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="MadaAssociationMobile.Views.PersonalInfoView"
+             xmlns:controls="clr-namespace:MadaAssociationMobile.Controls"
+             xmlns:viewmodelbase="clr-namespace:MadaAssociationMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <ScrollView >
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                    Text="{Binding MaxSteps}" 
+                    FontSize="16"
+                    HorizontalOptions="Start" 
+                    Style="{StaticResource PrimaryPageHeader}" />
+                    <Label
+                    Text="Personal information" 
+                    HorizontalOptions="Start"
+                    FontSize="16"
+                    VerticalOptions="End"
+                    Style="{StaticResource PrimaryBody}" />
+
+                </StackLayout>
+
+                <controls:CustomTextEntry
+                Grid.Row="1"
+                Margin="0,5,0,0"
+                Text="{Binding Model.FirstName.Text}"
+                Placeholder="{Binding Model.FirstName.Placeholder}"
+                Title="{Binding Model.FirstName.Title}"
+                IsError="{Binding Model.FirstName.IsError}" 
+                IsPassword="{Binding Model.FirstName.IsPassword}"
+                ErrorText="{Binding Model.FirstName.ErrorText}"/>
+                <controls:CustomTextEntry
+                Margin="0,5,0,0"
+                Grid.Row="2"
+                Text="{Binding Model.LastName.Text}"
+                Title="{Binding Model.LastName.Title}"
+                Placeholder="{Binding Model.LastName.Placeholder}"
+                IsError="{Binding Model.LastName.IsError}" 
+                IsPassword="{Binding Model.LastName.IsPassword}"
+                ErrorText="{Binding Model.LastName.ErrorText}"/>
+                <controls:PickerEntry 
+                Grid.Row="3" 
+                Title="Gender*"
+                SelectetItem="{Binding Gender}"
+                IsError="{Binding Source=Gender,Path=IsError}"
+                ErrorText="{Binding Source=Gender,Path=ErrorText}"
+                ListItems="{Binding Model.GenderList}"/>
+                <controls:PickerEntry 
+                Grid.Row="4"
+                Title="Country*"
+                IsError="{Binding Source=Country,Path=IsError}"
+                ErrorText="{Binding Source=Country,Path=ErrorText}"
+                SelectetItem="{Binding Country}"
+                ListItems="{Binding Model.CountryList}"/>
+                <Button 
+                Text="Next"
+                Margin="0,15,0,0"
+                Grid.Row="5"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding NextCommand}"/>
+                <Label
+                Margin="0,10"
+                Grid.Row="6" 
+                Text="* indicates a required field" 
+                Style="{StaticResource PrimaryBody}"/>
+            </Grid>
+        </ScrollView>
+    </ContentView>
+</base:BaseView>

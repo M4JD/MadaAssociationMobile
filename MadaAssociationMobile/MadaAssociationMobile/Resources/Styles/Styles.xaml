@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MadaAssociationMobile.Controls"
+    x:Class="MadaAssociationMobile.Resources.Styles">
+    <!-- Begin Button Styles -->
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource NormalPrimaryButtonColor}" />
+                            <Setter Property="TextColor" Value="{DynamicResource NormalPrimaryButtonTextColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource NormalPrimaryButtonColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource PressedPrimaryButtonColor}" />
+                            <Setter Property="TextColor" Value="{DynamicResource PressedPrimaryButtonTextColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource PressedPrimaryButtonColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                            <Setter Property="TextColor" Value="{DynamicResource DisabledPrimaryButtonTextColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextTransform" Value="None" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BorderWidth" Value="0" />
+    </Style>
+
+    <Style x:Key="SuccessOutlineImageButton" TargetType="ImageButton">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource Success}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource White}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource Success}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource Success}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+    <Style x:Key="DangerOutlineImageButton" TargetType="ImageButton">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource Danger}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource White}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource Danger}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource Danger}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource DisabledPrimaryButtonColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+
+    <Style x:Key="SecondaryButton" TargetType="Button">
+    </Style>
+    <!-- End Button Styles -->
+
+    <!-- Begin RadioButton Styles -->
+    <Style x:Key="LanguageRadioButtons" TargetType="controls:CustomRadioButton">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HighLightColor" Value="#2965FF" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End RadioButton Styles -->
+
+    <!-- Begin Popup Styles -->
+    <Style x:Key="PopupHeader" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="17" />
+        <!--<Setter Property="HighLightColor" Value="#2965FF" />-->
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+
+    <Style x:Key="MenuItemText" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="12" />
+        <!--<Setter Property="HighLightColor" Value="#2965FF" />-->
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End Popup Styles -->
+
+    <!-- Begin Links Styles -->
+    <Style x:Key="PrimaryLink" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource LinkColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End Links Styles -->
+
+    <!-- Begin PageHeader Styles -->
+    <Style x:Key="PrimaryPageHeader" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="ToolbarHeaderText" TargetType="Label">
+        <Setter Property="TextColor" Value="#FBFDFF" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End Links Styles -->
+
+    <!-- Begin Contacts Styles -->
+    <Style x:Key="ContactsTitle" TargetType="Label">
+        <Setter Property="MaxLines" Value="1" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="CardTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="SettingsTitle" TargetType="Label">
+        <Setter Property="MaxLines" Value="1" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End Contacts Styles -->
+    <!-- Begin Messages Styles -->
+    <Style x:Key="MessageTitle" TargetType="Label">
+        <Setter Property="MaxLines" Value="1" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="MessageTime" TargetType="Label">
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="MessageSubTitle" TargetType="Label">
+        <Setter Property="MaxLines" Value="1" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="MessageBadge" TargetType="Label">
+        <Setter Property="MaxLines" Value="1" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End Messages Styles -->
+    <!-- Begin ChatDetails Styles -->
+    <Style x:Key="ChatMessageContent" TargetType="Label">
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="16" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="ChatMessageTime" TargetType="Label">
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <!-- End ChatDetails Styles -->
+    <!-- Begin Entry Styles -->
+    <Style x:Key="PrimaryEntry" TargetType="Entry">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+                            <Setter Property="PlaceholderColor" Value="{DynamicResource Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+                            <Setter Property="BackgroundColor" Value="#999999" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="PlaceholderColor" Value="#999999" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+
+    <Style x:Key="FrameEntry" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="#D0D0D5" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{DynamicResource Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EntryTitle" TargetType="Label">
+        <Setter Property="Margin" Value="0,0,0,7" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList >
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+    <Style x:Key="EntryError" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+
+    <Style x:Key="PrimaryBody" TargetType="Label">
+        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="FontFamily" Value="" />-->
+    </Style>
+
+    <!-- End Entry Styles -->
+
+</ResourceDictionary>

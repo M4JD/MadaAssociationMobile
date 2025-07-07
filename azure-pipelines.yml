@@ -1,0 +1,46 @@
+# Xamarin.Android
+# Build a Xamarin.Android project.
+# Add steps that test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+trigger:
+ branches:
+  include:
+    - UAT*
+    - RELEASE*
+
+pool:
+  vmImage: 'macos-latest'
+
+variables:
+  buildConfiguration: 'UAT'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  tag: '$(Build.BuildNumber)'
+  env: ''
+  versionCode: '$(Date:yyMMddhhmm)'
+  tenant: ''
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+- task: DownloadSecureFile@1
+  displayName: 'Download MadaAndroidApp.keystore file'
+  name: keystore
+  inputs:
+    secureFile: 'MadaAndroidApp.keystore'
+- task: XamarinAndroid@1
+  inputs:
+    projectFile: '**/*droid*.csproj'
+    outputDirectory: '$(outputDirectory)'
+    configuration: '$(buildConfiguration)'
+    msbuildArguments: '/p:JavaSdkDirectory="$(JAVA_HOME)/" /t:SignAndroidPackage /p:AndroidNdkDirectory="$(androidNdkPath)" /p:AndroidKeyStore="True" /p:AndroidSigningKeyStore="$(keystore.secureFilePath)" /p:AndroidSigningKeyPass="$(MadaKeyPas)" /p:AndroidSigningKeyAlias="$(MadaAlias)" /p:AndroidSigningStorePass="$(MadaKeyPas)"'
+    jdkOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(outputDirectory)
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
