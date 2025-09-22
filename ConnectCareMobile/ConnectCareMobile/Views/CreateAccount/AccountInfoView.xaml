@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ConnectCareMobile.Views.AccountInfoView"
+             xmlns:controls="clr-namespace:ConnectCareMobile.Controls"
+             xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <ScrollView >
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                    Text="{Binding MaxSteps}" 
+                    FontSize="16"
+                    HorizontalOptions="Start" 
+                    Style="{StaticResource PrimaryPageHeader}" />
+                    <Label
+                    Text="Account information" 
+                    HorizontalOptions="Start"
+                    FontSize="16"
+                    VerticalOptions="End"
+                    Style="{StaticResource PrimaryBody}" />
+
+                </StackLayout>
+                <controls:CustomTextEntry
+                Grid.Row="1"
+                Margin="0,5,0,0"
+                Text="{Binding Model.Username.Text}"
+                Placeholder="{Binding Model.Username.Placeholder}"
+                Title="{Binding Model.Username.Title}"
+                IsError="{Binding Model.Username.IsError}" 
+                IsPassword="{Binding Model.Username.IsPassword}"
+                ErrorText="{Binding Model.Username.ErrorText}"/>
+                <controls:PhoneEntry
+                Grid.Row="2"
+                Margin="0,5,0,0"
+                Text="{Binding Model.Phone.Text}"
+                Placeholder="{Binding Model.Phone.Placeholder}"
+                IsError="{Binding Model.Phone.IsError}" 
+                Title="{Binding Model.Phone.Title}"
+                SelectetItem="{Binding Country}"
+                ListItems="{Binding Model.CountryList}"
+                ErrorText="{Binding Model.Phone.ErrorText}"/>
+                <controls:CustomTextEntry
+                Margin="0,5,0,0"
+                Grid.Row="3"
+                Text="{Binding Model.Email.Text}"
+                Placeholder="{Binding Model.Email.Placeholder}"
+                Title="{Binding Model.Email.Title}"
+                IsError="{Binding Model.Email.IsError}" 
+                IsPassword="{Binding Model.Email.IsPassword}"
+                ErrorText="{Binding Model.Email.ErrorText}"/>
+                <controls:CustomTextEntry
+                Margin="0,5,0,0"
+                Title="{Binding Model.Password.Title}"
+                Grid.Row="4"
+                Text="{Binding Model.Password.Text}"
+                Placeholder="{Binding Model.Password.Placeholder}"
+                IsError="{Binding Model.Password.IsError}" 
+                IsPassword="{Binding Model.Password.IsPassword}"
+                ErrorText="{Binding Model.Password.ErrorText}"/>
+                <controls:CustomTextEntry
+                Margin="0,5,0,0"
+                Title="{Binding Model.ConfirmPassword.Title}"
+                Grid.Row="5"
+                Text="{Binding Model.ConfirmPassword.Text}"
+                Placeholder="{Binding Model.ConfirmPassword.Placeholder}"
+                IsError="{Binding Model.ConfirmPassword.IsError}" 
+                IsPassword="{Binding Model.ConfirmPassword.IsPassword}"
+                ErrorText="{Binding Model.ConfirmPassword.ErrorText}"/>
+                <Button Text="Next"
+                    Margin="0,15,0,0"
+                    Grid.Row="6"
+                    Style="{StaticResource PrimaryButton}"
+                    Command="{Binding NextCommand}"/>
+                <Label
+                Margin="0,10"
+                Grid.Row="7"
+                Text="* indicates a required field" 
+                Style="{StaticResource PrimaryBody}"/>
+            </Grid>
+        </ScrollView>
+    </ContentView>
+</base:BaseView>

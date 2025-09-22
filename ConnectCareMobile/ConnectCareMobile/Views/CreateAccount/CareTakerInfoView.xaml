@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectCareMobile.Views.CareTakerInfoView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:ConnectCareMobile.Controls"
+             xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <ScrollView >
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                    Text="Step 4 of 4: " 
+                    FontSize="16"
+                    HorizontalOptions="Start" 
+                    Style="{StaticResource PrimaryPageHeader}" />
+                    <Label
+                    Text="Caregiver information" 
+                    HorizontalOptions="Start"
+                    FontSize="16"
+                    VerticalOptions="End"
+                    Style="{StaticResource PrimaryBody}" />
+
+                </StackLayout>
+                <controls:CustomTextEntry
+                Grid.Row="1"
+                Margin="0,5,0,0"
+                Text="{Binding Model.Username.Text}"
+                Placeholder="{Binding Model.Username.Placeholder}"
+                IsError="{Binding Model.Username.IsError}" 
+                IsPassword="{Binding Model.Username.IsPassword}"
+                ErrorText="{Binding Model.Username.ErrorText}"/>
+                <Button Text="Sign Up"
+                    Margin="0,15,0,0"
+                    Grid.Row="2"
+                    Style="{StaticResource PrimaryButton}"
+                    Command="{Binding SignUpCommand}"/>
+                <Label
+                Margin="0,10"
+                HorizontalTextAlignment="Center"
+                Grid.Row="3">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Please make sure the primary caregiver of the owner of this account agrees to the following" TextColor="Black"/>
+                            <Span Text=" terms and conditions "
+                              TextColor="{StaticResource Primary}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text="and " TextColor="Black"/>
+                            <Span Text="privacy policy." TextColor="{StaticResource Primary}" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </Grid>
+        </ScrollView>
+    </ContentView>
+</base:BaseView>

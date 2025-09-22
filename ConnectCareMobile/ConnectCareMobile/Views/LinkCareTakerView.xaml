@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ConnectCareMobile.Controls"
+             x:Class="ConnectCareMobile.Views.LinkCareTakerView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20,0">
+            <controls:CustomTextEntry
+            Grid.Row="1"
+            Margin="0,5,0,0"
+            Text="{Binding Username.Text}"
+            Placeholder="{Binding Username.Placeholder}"
+            IsError="{Binding Username.IsError}" 
+            IsPassword="{Binding Username.IsPassword}"
+            ErrorText="{Binding Username.ErrorText}"/>
+            <Button Text="Create Account"
+            Margin="0,15,0,0"
+            Grid.Row="7"
+            Style="{StaticResource PrimaryButton}"
+            Command="{Binding CreateAccountCommand}"/>
+        </StackLayout>
+    </ContentView>
+</base:BaseView>

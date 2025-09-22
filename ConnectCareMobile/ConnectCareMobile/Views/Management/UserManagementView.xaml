@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ConnectCareMobile.Controls"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+             viewmodelbase:ViewModelLocator.AutoWireViewModel="True"
+             x:Name="UserManagementViewPage"
+             x:Class="ConnectCareMobile.Views.UserManagementView">
+    <ContentView  ControlTemplate="{StaticResource BasePagesTemplates}">
+        <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsRefreshing}">
+            <ScrollView>
+            <StackLayout 
+                BindableLayout.ItemsSource="{Binding Members}" 
+                BindableLayout.ItemTemplateSelector="{StaticResource AutisticUserManagementTemplateSelector}">
+                <BindableLayout.EmptyView>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Image HorizontalOptions="CenterAndExpand" Source="empty_list"></Image>
+                        <Label HorizontalOptions="CenterAndExpand" Text="Empty" Style="{StaticResource MessageTitle}"></Label>
+                    </StackLayout>
+                </BindableLayout.EmptyView>
+            </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentView>
+</base:BaseView>

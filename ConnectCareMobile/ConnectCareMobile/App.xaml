@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:Application.WindowSoftInputModeAdjust="Resize"
+             xmlns:resources="clr-namespace:ConnectCareMobile.Resources"
+             x:Class="ConnectCareMobile.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <resources:Colors />
+                <resources:MessagesTemplate />
+                <resources:AutisticUserManagementTemplate />
+                <resources:ConnectionTemplate />
+                <resources:ContactTemplate />
+                <resources:PagesTemplates />
+                <resources:Constants />
+                <resources:Styles />
+                <resources:Converters />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

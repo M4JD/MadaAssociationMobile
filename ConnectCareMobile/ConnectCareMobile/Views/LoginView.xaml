@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    x:Class="ConnectCareMobile.Views.LoginView"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:controls="clr-namespace:ConnectCareMobile.Controls"
+    NavigationPage.HasNavigationBar="False"
+    StatusBar="{Binding StatusBar}"
+    mc:Ignorable="d">
+    <!--ControlTemplate="{StaticResource BasePagesTemplates}"-->
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+
+        <Grid VerticalOptions="CenterAndExpand" RowDefinitions="0.5*,Auto,Auto,Auto,Auto,Auto,Auto">
+            <Image 
+                    WidthRequest="68" 
+                    HorizontalOptions="CenterAndExpand"
+                    Source="default_image.png"/>
+            <controls:CustomTextEntry
+                    Grid.Row="1"
+                    Text="{Binding Model.Username.Text}"
+                    Placeholder="{Binding Model.Username.Placeholder}"
+                    IsError="{Binding Model.Username.IsError}"
+                    Title="{Binding Model.Username.Title}"
+                    IsPassword="{Binding Model.Username.IsPassword}"
+                    ErrorText="{Binding Model.Username.ErrorText}"/>
+            <controls:CustomTextEntry
+                    Margin="0,20,0,0"
+                    Grid.Row="2"
+                    Text="{Binding Model.Password.Text}"
+                    Placeholder="{Binding Model.Password.Placeholder}"
+                    Title="{Binding Model.Password.Title}"
+                    IsError="{Binding Model.Password.IsError}" 
+                    IsPassword="{Binding Model.Password.IsPassword}"
+                    ErrorText="{Binding Model.Password.ErrorText}"/>
+            <controls:Link 
+                    Grid.Row="3"
+                    Command="{Binding ForgetPasswordCommand}"
+                    Margin="0,0,0,20"
+                    Text="Forgot password?" 
+                    HorizontalOptions="EndAndExpand"/>
+            <Label Grid.Row="4"
+                   Margin="0,0,0,10"
+                   Style="{StaticResource EntryError}"
+                   Text="{Binding ErrorMessage}" 
+                   IsVisible="{Binding ErrorMessage,Converter={StaticResource EmptyStringConverter}}" />
+            <Button 
+                    Text="Log in" 
+                    Grid.Row="5"
+                    Command="{Binding LoginCommand}" 
+                    Style="{StaticResource PrimaryButton}" />
+            <Label 
+                    Grid.Row="6"
+                    Margin="0,0,0,25"
+                    HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span 
+                                TextColor="{StaticResource Black}" 
+                                Text="Dont have an account?"/>
+                        <Span Text=" " />
+                        <Span Text="Click here to create one." TextColor="{DynamicResource LinkColor}" >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CreateAccountCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </ContentView>
+</base:BaseView>

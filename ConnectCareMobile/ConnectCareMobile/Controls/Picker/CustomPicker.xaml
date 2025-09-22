@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectCareMobile.Controls.CustomPicker"
+             x:Name="CustomPickerComponent">
+    <ContentView.Content>
+        <StackLayout 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand">
+            <Grid ColumnDefinitions="Auto,*,Auto" 
+                    HorizontalOptions="FillAndExpand">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+                <Picker
+                    HorizontalOptions="FillAndExpand"
+                    SelectedItem="{Binding Source={x:Reference CustomPickerComponent}, Path=SelectetItem}"
+                    IsVisible="False"
+                    x:Name="CPicker"
+                    Focused="CPicker_Focused"
+                    Unfocused="CPicker_Unfocused"
+                    Grid.Column="1"
+                    ItemsSource="{Binding Source={x:Reference CustomPickerComponent}, Path=ListItems}"
+                    SelectedIndexChanged="Picker_SelectedIndexChanged"
+                    ItemDisplayBinding="{Binding DisplayValue}"/>
+                <Label
+                    HorizontalOptions="FillAndExpand"
+                    Padding="0,11,0,11"
+                    Style="{StaticResource PrimaryBody}"
+                    x:Name="SelectedItemDisplayValue"
+                    VerticalOptions="CenterAndExpand"
+                    Grid.Column="1"/>
+                <Image
+                    Grid.Column="2"
+                    Margin="0,0,4,0"
+                    x:Name="PickerHandle"
+                    HorizontalOptions="EndAndExpand"
+                    Source="{Binding Source={x:Reference CustomPickerComponent}, Path=DropdownImage}"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

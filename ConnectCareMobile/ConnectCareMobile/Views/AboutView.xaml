@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ConnectCareMobile.Views.AboutView"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="True" BackgroundColor="White">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <StackLayout Padding="20,0">
+            <Grid 
+                ColumnDefinitions="*,10"
+                Padding="0,20">
+                <Label Margin="10,0,0,0" Text="About Us" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="1" Aspect="AspectFit" />
+                <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewProfileCommand}"/>
+                </Grid.GestureRecognizers>-->
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="*,10"
+                Padding="0,20">
+                <Label Margin="10,0,0,0" Text="License Agreement" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="1" Aspect="AspectFit" />
+                <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewProfileCommand}"/>
+                </Grid.GestureRecognizers>-->
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="*,10"
+                Padding="0,20">
+                <Label Margin="10,0,0,0" Text="Privacy Policy" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="1" Aspect="AspectFit" />
+                <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewProfileCommand}"/>
+                </Grid.GestureRecognizers>-->
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+            <Grid 
+                ColumnDefinitions="*,10"
+                Padding="0,20">
+                <Label Margin="10,0,0,0" Text="Terms and conditions" Style="{StaticResource ContactsTitle}" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="arrow" Grid.Row="0" Grid.Column="1" Aspect="AspectFit" />
+                <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewProfileCommand}"/>
+                </Grid.GestureRecognizers>-->
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource LightGrey}"/>
+        </StackLayout>
+
+    </ContentView>
+
+</base:BaseView>

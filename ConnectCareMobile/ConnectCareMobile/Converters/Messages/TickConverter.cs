@@ -1,0 +1,41 @@
+﻿using ConnectCareMobile.Common.Global;
+using ConnectCareMobile.Services.APIServices.Response;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+using Xamarin.Forms;
+
+namespace ConnectCareMobile.Converters
+{
+    public class TickConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is MessagesResponse Value)
+            {
+                if (Value != null)
+                {
+                    if (Value.UserId == GlobalSettings.LoggedUser.UserId)
+                    {
+                        // Current user is the sender
+                        return true;
+                    }
+                    else
+                    {
+                        // Current user is the reciever
+                        return false;
+                    }
+                }
+                else return false;
+            }
+            else
+                return false;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return false;
+        }
+    }
+}

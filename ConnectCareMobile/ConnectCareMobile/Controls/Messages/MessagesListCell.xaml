@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="MessagesListCellControl"
+             x:Class="ConnectCareMobile.Controls.MessagesListCell">
+    <ContentView.Content>
+        <Grid 
+            ColumnDefinitions="50,*" 
+            RowDefinitions="50,6" 
+            Padding="10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer CommandParameter="{Binding Source={x:Reference MessagesListCellControl},Path=CommandParameter}" Command="{Binding Source={x:Reference MessagesListCellControl},Path=ClickCommand}"/>
+            </Grid.GestureRecognizers>
+            <Frame 
+                HasShadow="False" 
+                BorderColor="{StaticResource LightGrey}" 
+                CornerRadius="25" 
+                Padding="0">
+                <Image
+                    WidthRequest="50"
+                    Aspect="AspectFit" 
+                    Source="{Binding Source={x:Reference MessagesListCellControl},Path=ContactAvatar}"/>
+            </Frame>
+            <Grid 
+                Margin="10,0,0,0" 
+                Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer CommandParameter="{Binding Source={x:Reference MessagesListCellControl},Path=CommandParameter}" Command="{Binding Source={x:Reference MessagesListCellControl},Path=ClickCommand}"/>
+                </Grid.GestureRecognizers>
+                <Grid 
+                    ColumnDefinitions="*,Auto">
+                    <Label 
+                        Style="{StaticResource MessageTitle}"
+                        Text="{Binding Source={x:Reference MessagesListCellControl},Path=ContactName}"/>
+                    <Label
+                        Grid.Column="1" 
+                        Style="{StaticResource MessageTime}"
+                        Text="{Binding Source={x:Reference MessagesListCellControl},Path=LastMessageTime} "/>
+                </Grid>
+                <Grid 
+                    ColumnDefinitions="*,Auto"
+                    Grid.Row="1">
+                    <Label 
+                        Grid.Column="0"
+                        Style="{StaticResource MessageSubTitle}"
+                        Text="{Binding Source={x:Reference MessagesListCellControl},Path=LastMessage}"/>
+                    <Frame
+                        Padding="0"
+                        x:Name="BadgeContainer"
+                        Grid.Column="1"
+                        CornerRadius="48"
+                        BorderColor="Transparent"
+                        BackgroundColor="#2965FF"
+                        HasShadow="False">
+                        <Label 
+                            VerticalOptions="CenterAndExpand"
+                            Padding="5"
+                            Style="{StaticResource MessageBadge}"
+                            Text="{Binding Source={x:Reference MessagesListCellControl},Path=MessageCount}"></Label>
+                    </Frame>
+                </Grid>
+            </Grid>
+            <BoxView Margin="0,5,0,0" Grid.Row="1" Grid.ColumnSpan="2" Color="{StaticResource LightGrey}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

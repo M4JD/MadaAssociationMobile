@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:ConnectCareMobile.Converters"
+    x:Class="ConnectCareMobile.Resources.Converters">
+    <converters:TickConverter x:Key="TickConverter" />
+    <converters:MessageDateConverter x:Key="MessageDateConverter" />
+    <converters:MessageFrameMarginConverter x:Key="MessageFrameMarginConverter" />
+    <converters:MessageFrameBackgroundColorConverter x:Key="MessageFrameBackgroundColorConverter" />
+    <converters:MessageFrameBorderColorConverter x:Key="MessageFrameBorderColorConverter" />
+    <converters:MessageTextConverter x:Key="MessageTextConverter" />
+    <converters:FullNameConverter x:Key="FullNameConverter" />
+    <converters:EmptyStringConverter x:Key="EmptyStringConverter" />
+    <converters:InvertBoolConverter x:Key="InvertBoolConverter" />
+    <converters:SelectedTabBackgroundColorConverter x:Key="SelectedTabBackgroundColorConverter" />
+    <converters:SelectedTabIconColorConverter x:Key="SelectedTabIconColorConverter" />
+</ResourceDictionary>

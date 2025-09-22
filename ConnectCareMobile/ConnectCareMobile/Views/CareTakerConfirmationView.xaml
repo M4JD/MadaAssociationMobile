@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:base="clr-namespace:ConnectCareMobile.Views.Base"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:viewmodelbase="clr-namespace:ConnectCareMobile.ViewModels.Base"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="True"
+    x:Class="ConnectCareMobile.Views.CareTakerConfirmationView">
+    <ContentView ControlTemplate="{StaticResource BasePagesTemplates}">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20,0">
+            <Label Text="Awaiting Caregiver’s Approval" TextColor="Black"
+               HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentView>
+</base:BaseView>

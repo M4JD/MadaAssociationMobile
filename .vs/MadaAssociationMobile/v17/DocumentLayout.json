@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\VS22\\repos\\MadaAssociationMobile\\",
+  "WorkspaceRootPath": "D:\\VS22\\repos\\ConnectCareMobile\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|MadaAssociationMobile\\MadaAssociationMobile.Android\\MadaAssociationMobile.Android.csproj|d:\\vs22\\repos\\madaassociationmobile\\madaassociationmobile\\madaassociationmobile.android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|MadaAssociationMobile\\MadaAssociationMobile.Android\\MadaAssociationMobile.Android.csproj|solutionrelative:madaassociationmobile\\madaassociationmobile.android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|ConnectCareMobile\\ConnectCareMobile.Android\\ConnectCareMobile.Android.csproj|d:\\vs22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|ConnectCareMobile\\ConnectCareMobile.Android\\ConnectCareMobile.Android.csproj|solutionrelative:ConnectCareMobile\\ConnectCareMobile.android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|MadaAssociationMobile\\MadaAssociationMobile.Android\\MadaAssociationMobile.Android.csproj|d:\\vs22\\repos\\madaassociationmobile\\madaassociationmobile\\madaassociationmobile.android\\helpers\\fcmmessagingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|MadaAssociationMobile\\MadaAssociationMobile.Android\\MadaAssociationMobile.Android.csproj|solutionrelative:madaassociationmobile\\madaassociationmobile.android\\helpers\\fcmmessagingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|ConnectCareMobile\\ConnectCareMobile.Android\\ConnectCareMobile.Android.csproj|d:\\vs22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.android\\helpers\\fcmmessagingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1C403D7-9832-49AF-A038-135BE0053540}|ConnectCareMobile\\ConnectCareMobile.Android\\ConnectCareMobile.Android.csproj|solutionrelative:ConnectCareMobile\\ConnectCareMobile.android\\helpers\\fcmmessagingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,10 +24,10 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainActivity.cs",
-              "DocumentMoniker": "D:\\VS22\\repos\\MadaAssociationMobile\\MadaAssociationMobile\\MadaAssociationMobile.Android\\MainActivity.cs",
-              "RelativeDocumentMoniker": "MadaAssociationMobile\\MadaAssociationMobile.Android\\MainActivity.cs",
-              "ToolTip": "D:\\VS22\\repos\\MadaAssociationMobile\\MadaAssociationMobile\\MadaAssociationMobile.Android\\MainActivity.cs",
-              "RelativeToolTip": "MadaAssociationMobile\\MadaAssociationMobile.Android\\MainActivity.cs",
+              "DocumentMoniker": "D:\\VS22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.Android\\MainActivity.cs",
+              "RelativeDocumentMoniker": "ConnectCareMobile\\ConnectCareMobile.Android\\MainActivity.cs",
+              "ToolTip": "D:\\VS22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.Android\\MainActivity.cs",
+              "RelativeToolTip": "ConnectCareMobile\\ConnectCareMobile.Android\\MainActivity.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAADEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T08:18:27.241Z",
@@ -37,10 +37,10 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FCMMessagingService.cs",
-              "DocumentMoniker": "D:\\VS22\\repos\\MadaAssociationMobile\\MadaAssociationMobile\\MadaAssociationMobile.Android\\Helpers\\FCMMessagingService.cs",
-              "RelativeDocumentMoniker": "MadaAssociationMobile\\MadaAssociationMobile.Android\\Helpers\\FCMMessagingService.cs",
-              "ToolTip": "D:\\VS22\\repos\\MadaAssociationMobile\\MadaAssociationMobile\\MadaAssociationMobile.Android\\Helpers\\FCMMessagingService.cs",
-              "RelativeToolTip": "MadaAssociationMobile\\MadaAssociationMobile.Android\\Helpers\\FCMMessagingService.cs",
+              "DocumentMoniker": "D:\\VS22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.Android\\Helpers\\FCMMessagingService.cs",
+              "RelativeDocumentMoniker": "ConnectCareMobile\\ConnectCareMobile.Android\\Helpers\\FCMMessagingService.cs",
+              "ToolTip": "D:\\VS22\\repos\\ConnectCareMobile\\ConnectCareMobile\\ConnectCareMobile.Android\\Helpers\\FCMMessagingService.cs",
+              "RelativeToolTip": "ConnectCareMobile\\ConnectCareMobile.Android\\Helpers\\FCMMessagingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T08:08:53.557Z",

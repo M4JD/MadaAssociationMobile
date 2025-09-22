@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ConnectCareMobile.CustomRenderers"
+             x:Class="ConnectCareMobile.Controls.CustomTextEntry"
+             x:Name="CustomTextEntryControl">
+    <StackLayout Spacing="0" Padding="0" Margin="0">
+        <Label
+            x:Name="TitleLabel"
+            Style="{StaticResource EntryTitle}"
+            IsVisible="{Binding Source={x:Reference CustomTextEntryControl},Path=Title, Converter={StaticResource EmptyStringConverter}}"
+            Text="{Binding Source={x:Reference CustomTextEntryControl},Path=Title}"/>
+        <Frame Padding="0.5"
+               x:Name="EntryOuterFrame"
+                Style="{StaticResource FrameEntry}">
+            <Frame 
+               x:Name="EntryInnerFrame"
+                Style="{StaticResource FrameEntry}">
+                <Grid>
+                    <controls:CustomEntry
+                        Margin="0"
+                        HandleColor="White"
+                        TintColor="White"
+                        Placeholder="{Binding Source={x:Reference CustomTextEntryControl},Path=Placeholder}"
+                        x:Name="CustomEntryControl"
+                        Focused="CustomEntry_Focused"
+                        Unfocused="CustomEntry_Unfocused"
+                        Style="{StaticResource PrimaryEntry}"
+                        Text="{Binding Source={x:Reference CustomTextEntryControl},Path=Text}"
+                        IsPassword="{Binding Source={x:Reference CustomTextEntryControl},Path=IsPassword}"/>
+                    <Label Margin="0,0,10,0" 
+                           Text="Show" 
+                           IsVisible="{Binding Source={x:Reference CustomTextEntryControl},Path=IsPassword}"
+                           TextColor="Black" 
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <!--Placeholder="{Binding Source={x:Reference CustomTextEntryControl},Path=Placeholder}"/>-->
+            </Frame>
+        </Frame>
+        <Label 
+                Style="{StaticResource EntryError}"
+                IsVisible="{Binding Source={x:Reference CustomTextEntryControl},Path=IsError}"
+                Text="{Binding Source={x:Reference CustomTextEntryControl},Path=ErrorText}"/>
+    </StackLayout>
+</ContentView>
